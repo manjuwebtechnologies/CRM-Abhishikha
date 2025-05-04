@@ -1,0 +1,404 @@
+@charset "UTF-8";
+
+
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    transition: .3s ease-in-out;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+.header {
+    background-color: #0d5a45;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header h4 {
+    color: #FAF9F6;
+    text-transform: capitalize;
+}
+.header img {
+    height: 80px;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.section {
+    display: none; /* Hide all sections by default */
+}
+.section.active {
+    display: block; /* Show active section */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background-color: #0d5a45;
+    color: white;
+}
+
+.footer {
+    background-color: #0d5a45;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Report Section Styles */
+
+.card {
+    flex: 1 1 250px;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    background: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.card i {
+    padding: 16px 20px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 24px;
+    margin-right: 20px;
+    color: white;
+}
+
+.card div > div:last-child {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.card div div {
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+
+/* Tables Styling */
+
+/* Section Title */
+#donors,#reports , #donations, #agents h2 {
+    margin-bottom: 20px;
+}
+
+/* Core Table Style */
+#donorsTable, #agentsTable, #donationsTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Name Column (2nd Column) Min Width */
+#donorsTable th:nth-child(2),
+#agentsTable th:nth-child(2),
+#donationsTable th:nth-child(2) {
+    min-width: 120px;
+}
+
+/* Address Column (5th) Ellipsis Handling */
+#donorsTable th:nth-child(5), #donorsTable td:nth-child(5),
+#agentsTable th:nth-child(5), #agentsTable td:nth-child(5),
+#donationsTable th:nth-child(5), #donationsTable td:nth-child(5) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+/* Table Header and Cell Alignment */
+#donorsTable th, #donorsTable td,
+#agentsTable th, #agentsTable td,
+#donationsTable th, #donationsTable td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+/* Table Header Style */
+#donorsTable th,
+#agentsTable th,
+#donationsTable th {
+    font-size: 14px;
+    font-weight: 600;
+    background-color: white;
+    color: black;
+}
+
+/* Alternate Row Coloring */
+#donorsTable tr:nth-child(even),
+#agentsTable tr:nth-child(even),
+#donationsTable tr:nth-child(even) {
+    background-color: #e3f2fd;
+}
+
+/* Row Hover Effect */
+#donorsTable tr:hover,
+#agentsTable tr:hover,
+#donationsTable tr:hover {
+    transition: 0.3s;
+}
+
+/* Action Links Base Style */
+#donorsTable a,
+#agentsTable a,
+#donationsTable a {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+/* Edit Button Style */
+#donorsTable a:first-child,
+#agentsTable a:first-child,
+#donationsTable a:first-child {
+    background-color: #E9F8FC;
+    color: #23B7E5;
+    margin-right: 10px;
+}
+
+#donorsTable a:first-child:hover,
+#agentsTable a:first-child:hover,
+#donationsTable a:first-child:hover {
+    background-color: #23B7E5;
+    color: white;
+}
+
+/* Delete Button Style */
+#donorsTable a:nth-child(2),
+#agentsTable a:nth-child(2),
+#donationsTable a:nth-child(2) {
+    background-color: #FCEDEB;
+    color: #E6533C;
+}
+
+#donorsTable a:nth-child(2):hover,
+#agentsTable a:nth-child(2):hover,
+#donationsTable a:nth-child(2):hover {
+    background-color: #E6533C;
+    color: #FCEDEB;
+}
+
+/* Table Body Font Styling (DataTables) */
+table.dataTable tbody tr {
+    font-size: 13px;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+/* General Row Styling */
+#donorsTable tr,
+#agentsTable tr,
+#donationsTable tr {
+    font-size: 13px;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+/* --- DataTables Plugin Overrides --- */
+
+/* Search Filter Alignment */
+.dataTables_filter {
+    float: right;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.dataTables_filter label {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+.dataTables_filter input {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-left: 5px;
+}
+
+/* Length Menu Styling */
+.dataTables_length {
+    float: left;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #0d47a1;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #aaaaaa57 !important;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: white !important;
+    border-radius: 3px;
+    color: inherit;
+    padding: 4px !important;
+}
+
+.dataTables_length select {
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-left: 5px;
+}
+
+/* Info Text Below Table */
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    font-size: 14px;
+    font-weight: 500;
+    float: left;
+    padding-top: .755em;
+}
+
+/* Pagination Styles */
+.dataTables_paginate {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #aaaaaa57 !important;
+    border-radius: 3px;
+    padding: 4px !important;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: white !important;
+    color: inherit;
+    margin-left: 3px;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    outline: none !important;
+    border: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 5px 12px;
+    margin: 2px;
+    font-size: 13px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: black !important;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #0D5A45 !important;
+    color: white !important;
+    border-color: #0D5A45 !important;
+    transition: .3s ease-in;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: white !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #0d5a45 !important;
+    color: white !important;
+    border-color: #0d5a45 !important;
+    background: #0d5a45 !important;
+}
+
+
+.agent-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.agent-form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.agent-form-container input[type="text"],
+.agent-form-container input[type="email"],
+.agent-form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.agent-form-container textarea {
+    resize: vertical;
+}
+
+.agent-form-container button {
+    background-color: #0d5a45;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.agent-form-container button:hover {
+    background-color: #0d5a45de;
+}
+
+.edit a {
+    margin-right: 10px;
+}
+

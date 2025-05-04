@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* Edit Form Styling (copied from donor-form-container) */
+
+body {
+    background: #E2F1FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.edit-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #333;
+    text-align: center;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="email"],
+.edit-form input[type="date"],
+.edit-form input[type="number"],
+.edit-form input[type="password"],
+.edit-form select,
+.edit-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.edit-form button {
+    background-color: #0d5a45;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.edit-form button:hover {
+    background-color: #0d5a45de;
+}
