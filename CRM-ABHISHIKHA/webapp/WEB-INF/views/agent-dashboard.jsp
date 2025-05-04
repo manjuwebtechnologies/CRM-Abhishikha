@@ -19,12 +19,31 @@
 <html>
 <head>
     <title>Abhishikha Trust - Agent Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Chat Bot CSS -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/chatbot.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/nvb.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/style.css">
+    <link rel="stylesheet" href="/CRM_ABHISHIKHA/static/nvb.css">
+
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+    
+    <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    
+    <!-- Cloud Flare CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <meta charset="UTF-8">
+    
     <style>
         .section {
             display: none;
@@ -46,9 +65,14 @@
 <body>
 
     <div class="header">
-        <img src="${pageContext.request.contextPath}/images/logo.png" alt="Abhishikha Trust">
-        <h1>Abhishikha Trust - Agent Dashboard</h1>
-        <h4>Welcome, <%= session.getAttribute("username") %></h4>
+    	<div class= "inner-header">
+    		<img src="${pageContext.request.contextPath}/images/logo2.png" alt="Abhishikha Trust">
+        	<h1>Abhishikha Trust</h1>
+    	</div>
+        <div class=" user-name">
+        	<span class="user-icon nav-icon material-symbols-rounded">account_circle</span>
+        	<span class= "user-content"><strong>Agent</strong> <br> <%= session.getAttribute("username") %></span>
+        </div>
     </div>
 
     <div class="main">

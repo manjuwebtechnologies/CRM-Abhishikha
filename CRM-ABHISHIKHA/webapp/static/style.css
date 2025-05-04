@@ -13,22 +13,45 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-color: #f0f2f5;
+    background-color: #F2F2F2;
 }
 .header {
-    background-color: #0d5a45;
-    color: white;
+    margin: 18px;
+    border-radius: 20px;
+    background-color: white;
+    color: #151a2d;
     padding: 15px 20px;
+    box-shadow: 0px 0px 10px 2px rgb(0 0 0 / 2%);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-irgb(0, 64, 128)enter;
 }
-.header h4 {
-    color: #FAF9F6;
+
+.header .inner-header{
+	display: flex;
+	align-items: center;
+}
+.header h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+.header .user-name {
+	display: flex;
+	align-items: center;
+    color: #151a2d8a;
     text-transform: capitalize;
+    .user-content{
+    	text-align: center;
+    	font-size: 11px;
+    }
+    .user-icon{
+    	font-size:30px;
+    	margin-right:10px;
+    }
 }
 .header img {
-    height: 80px;
+    height: 40px;
+    margin-right: 20px; 
 }
 
 .main {
@@ -65,8 +88,9 @@ th {
 }
 
 .footer {
-    background-color: #0d5a45;
-    color: white;
+    background-color: transparent;
+    border-top: 1px solid hsl(240deg 7% 62% / 36%);
+    color: #151a2d;
     text-align: center;
     padding: 10px;
     font-size: 14px;
@@ -113,7 +137,9 @@ th {
 /* Tables Styling */
 
 /* Section Title */
-#donors,#reports , #donations, #agents h2 {
+#donors h2, #reports h2, #donations h2, #agents h2 {
+    font-weight: 600;
+    font-size: 22px;
     margin-bottom: 20px;
 }
 

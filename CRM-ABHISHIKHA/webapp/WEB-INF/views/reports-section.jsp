@@ -93,8 +93,9 @@
         rs.close(); ps.close();
 %>
 
-<div class="section active" id="reports">
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 40px;">
+<div class="section active" id="reports" style="padding: 20px;">
+<h2>Admin Dashboard</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
     <div class="card">
         <i class="fa-solid fa-user-tie" style="background-color: #654891;"></i>
         <div>
