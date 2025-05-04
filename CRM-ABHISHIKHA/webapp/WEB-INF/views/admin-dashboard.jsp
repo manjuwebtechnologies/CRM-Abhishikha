@@ -143,6 +143,8 @@
             <%@ include file="reports-section.jsp" %>
         </div>
         
+        
+        
         <!-- Chatbot button -->
         <button class="chatbot-toggler">
             <span class="material-symbols-rounded">mode_comment</span>

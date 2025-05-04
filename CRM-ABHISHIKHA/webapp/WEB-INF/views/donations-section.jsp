@@ -61,6 +61,20 @@
                        onclick="return confirm('Are you sure you want to delete this donation?')">Delete</a>
                 </td>
             </tr>
+<%--             
+            <a href="<%= request.getContextPath() %>/MakePDF?
+    name=<%= rs1.getString("name") %>
+    &receipt_no=<%= rs1.getString("receipt_no") %>
+    &amount=<%= rs1.getDouble("amount") %>
+    &date=<%= rs1.getDate("donation_date") %>
+<!-- <!--     &pan=AAAPL1234C --> -->
+<!-- <!--     &contact=9876543210 --> -->
+<!-- <!--     &email=test@example.com --> -->
+<!-- <!--     &mode=Cash --> -->
+<!-- <!--     &address=New Delhi --> -->
+<!-- <!--     &amount_words=One Thousand Only --> -->
+" target="_blank">Download Receipt</a>
+             --%>
         <%
                 }
             } catch (Exception e) {

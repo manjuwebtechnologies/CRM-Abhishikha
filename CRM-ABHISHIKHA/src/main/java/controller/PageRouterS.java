@@ -13,7 +13,7 @@ public class PageRouterS extends HttpServlet {
 
     private final List<String> allowedPages = Arrays.asList(
         "index", "admin-dashboard", "adminLogin", "agent-dashboard", "agentLogin",
-        "create-agent", "donation-form", "donor-form","editAgent", "editDonation", "editDonor"
+        "create-agent", "donation-form", "donor-form","editAgent", "editDonation", "editDonor","MakePDF"
     );
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
