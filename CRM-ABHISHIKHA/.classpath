@@ -19,5 +19,24 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/styled-xml-parser-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/svg-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/pdftest-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/pdfua-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/sign-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/forms-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/hyph-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/io-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/kernel-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/layout-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/pdfa-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/bouncy-castle-connector-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/bouncy-castle-fips-adapter-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/commons-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/font-asian-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/barcodes-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/iText-Core-9.1.0-only-jars/bouncy-castle-adapter-9.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/slf4j-simple-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/bobya/Downloads/slf4j-api-2.0.1.jar"/>
 	<classpathentry kind="output" path="webapp/WEB-INF/classes"/>
 </classpath>
