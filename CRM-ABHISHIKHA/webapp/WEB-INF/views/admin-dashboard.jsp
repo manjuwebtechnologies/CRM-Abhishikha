@@ -114,13 +114,13 @@
                 </ul>
                 <!-- Secondary bottom nav -->
                 <ul class="nav-list secondary-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <span class="nav-icon material-symbols-rounded">account_circle</span>
-                            <span class="nav-label">Profile</span>
-                        </a>
-                        <span class="nav-tooltip">Profile</span>
-                    </li>
+<!--                     <li class="nav-item"> -->
+<!--                         <a href="#" class="nav-link"> -->
+<!--                             <span class="nav-icon material-symbols-rounded">account_circle</span> -->
+<!--                             <span class="nav-label">Profile</span> -->
+<!--                         </a> -->
+<!--                         <span class="nav-tooltip">Profile</span> -->
+<!--                     </li> -->
                     <li class="nav-item">
                         <!-- Hidden form for logout -->
                         <form id="logoutForm" action="${pageContext.request.contextPath}/LogoutS" method="POST" style="display:none;"></form>

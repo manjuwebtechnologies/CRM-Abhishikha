@@ -12,10 +12,14 @@
     double currentYearDonations = 0;
     int totalDonors = 0;
     int totalAgents = 0;
+    
+    String role5 = (String) session.getAttribute("role");
+    Integer agentId5 = (Integer) session.getAttribute("agent_id");
 
     Connection con = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
+    int serialNumber = 1; // Start counter from 1
 
     try {
         con = DBUtil.getConnection();
@@ -93,7 +97,7 @@
         rs.close(); ps.close();
 %>
 
-<div class="section active" id="reports" style="padding: 20px;">
+<div class="section active" id="reports" style="padding: 25px;">
 <h2>Admin Dashboard</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
     <div class="card">
@@ -146,7 +150,88 @@
         </div>
     </div>
 </div>
+
+    <h2>Today's Donations</h2>
+    <table id="donationsTable" class="display" border="1" cellpadding="10" cellspacing="0"
+           style="width:100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #0d5a45; color: white;">
+                <th>S.No.</th> <!-- Changed from ID to Serial No -->
+                <th>Donor Name</th>
+                <th>Amount</th>
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Agent ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        <%
+            try {
+                con = DBUtil.getConnection();
+
+                if ("agent".equals(role5) && agentId5 != null) {
+                    ps = con.prepareStatement(
+                        "SELECT d.name, dn.* FROM donations dn JOIN donors d ON dn.donor_id = d.id " +
+                        "WHERE dn.agent_id = ? AND DATE(dn.donation_date) = CURDATE()"
+                    );
+                    ps.setInt(1, agentId5);
+                } else {
+                    ps = con.prepareStatement(
+                        "SELECT d.name, dn.* FROM donations dn JOIN donors d ON dn.donor_id = d.id " +
+                        "WHERE DATE(dn.donation_date) = CURDATE()"
+                    );
+                }
+
+
+                rs = ps.executeQuery();
+                while (rs.next()) {
+        %>
+            <tr>
+                <td><%= serialNumber++ %></td> <!-- Serial number here -->
+                <td><%= rs.getString("name") %></td>
+                <td>₹<%= rs.getDouble("amount") %></td>
+                <td><%= rs.getString("receipt_no") %></td>
+                <td><%= rs.getDate("donation_date") %></td>
+                <td><%= rs.getInt("agent_id") %></td>
+                <td class="edit">
+                    <a href="<%= request.getContextPath() %>/page/editDonation?id=<%= rs.getInt("id") %>">Edit</a>
+                    <a href="<%= request.getContextPath() %>/deleteDonation?id=<%= rs.getInt("id") %>"
+                       onclick="return confirm('Are you sure you want to delete this donation?')">Delete</a>
+                </td>
+            </tr>
+<%--             
+            <a href="<%= request.getContextPath() %>/MakePDF?
+    name=<%= rs1.getString("name") %>
+    &receipt_no=<%= rs1.getString("receipt_no") %>
+    &amount=<%= rs1.getDouble("amount") %>
+    &date=<%= rs1.getDate("donation_date") %>
+<!-- <!--     &pan=AAAPL1234C --> -->
+<!-- <!--     &contact=9876543210 --> -->
+<!-- <!--     &email=test@example.com --> -->
+<!-- <!--     &mode=Cash --> -->
+<!-- <!--     &address=New Delhi --> -->
+<!-- <!--     &amount_words=One Thousand Only --> -->
+" target="_blank">Download Receipt</a>
+             --%>
+        <%
+                }
+            } catch (Exception e) {
+        %>
+            <tr>
+                <td colspan="7" style="color: red;">Error: <%= e.getMessage() %></td>
+            </tr>
+        <%
+            } finally {
+                DBUtil.close(con, ps, rs);
+            }
+        %>
+        </tbody>
+    </table>
+
 </div>
+
+
 
 <% 
     } catch (Exception e) {
